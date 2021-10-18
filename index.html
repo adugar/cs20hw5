@@ -21,7 +21,12 @@
 <script type="text/javascript">
     var randomArr = [];
     for (let i = 0; i < 5; i++) {
-        randomArr.push(Math.floor(Math.random() * 48 + 1));
+        var num = Math.floor(Math.random() * 48 + 1);
+        while (randomArr.includes(num) != false) {
+            num = Math.floor(Math.random() * 48 + 1);
+            console.log("hello");
+        }
+        randomArr.push(num);
     }
     randomArr = randomArr.sort(function(a, b){
         if(a > b) return 1;
