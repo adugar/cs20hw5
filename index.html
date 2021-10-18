@@ -13,9 +13,11 @@
     <br>
     <div id="winning_lucky">Winning Lucky Number: </div>
     <br>
+    <div id="random_lucky">Random Lucky Number: </div>
+    <br>
     <div id="matching_numbers">Matching Numbers: </div>
     <br>
-    <div id="lucky_math">Lucky Match: </div>
+    <div id="lucky_match">Lucky Number Match: </div>
     <br>
     <div id="prize">Prize: $</div>
 <script type="text/javascript">
@@ -40,6 +42,8 @@
     
     var lucky = Math.floor(Math.random() * 18 + 1);
     
+    document.getElementById("random_lucky").innerHTML += lucky;
+    
     var numbers = prompt("Enter first 5 winning numbers separated by spaces");
     var numbers_array = numbers.split(" ");
     for (let i = 0; i < numbers_array.length; i++) {
@@ -59,10 +63,10 @@
     document.getElementById("matching_numbers").innerHTML += matching + " values matched";
     var luckyMatching = lucky == user_lucky;
     if (luckyMatching) {
-        document.getElementById("lucky_math").innerHTML += "Yes";
+        document.getElementById("lucky_match").innerHTML += "Yes";
     }
     else {
-        document.getElementById("lucky_math").innerHTML += "No";
+        document.getElementById("lucky_match").innerHTML += "No";
     }
     var prize = 0;
     var special = false;
